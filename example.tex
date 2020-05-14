@@ -1,0 +1,62 @@
+% !TEX TS-program = xelatex
+%
+% Created by Gerson Sunyé on 2020-05-14.
+% Copyright (c) 2020 .
+\documentclass{article}
+
+\usepackage{polyglossia}
+\usepackage{hyperref}
+\usepackage{science}
+
+\hypersetup
+{
+  pdftitle   = {Title},
+  pdfsubject = {Subject},
+  pdfauthor  = {Gerson Sunyé}
+}
+
+\title{Title}
+\author{Gerson Sunyé}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    Abstract
+\end{abstract}
+
+\section{Abbreviations}
+
+The work of Sigmund~\etal{}, \eg{} ``Man and Father'' teach us the The Legend of a Conqueror, \ie{}, the Oedipus legend.
+
+\section{Using listings.sty environments}
+
+\subsection{OCL}
+
+\begin{ocl}
+context Person
+pre: 
+	age > 0 and 
+	not firstName.oclIsUndefined() and
+	children->forAll(each | each.isValid()|)
+\end{ocl}
+
+
+
+\subsection{ATL}
+
+\begin{atl}
+rule relationnalContextToObjectContext {
+	from
+		r : RDBMSMM!RDBMSModel
+	to
+		c : ClassMM!ClassModel (
+            classifier <- r.table->union(r.getAllDataTypes()->collect(dt | thisModule.typeToPrimitiveDataType(dt)))
+		)
+	do {
+		r.debug('relationnalContextToObjectContext');
+	}
+}
+\end{atl}
+\end{document}
