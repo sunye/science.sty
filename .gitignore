@@ -8,3 +8,5 @@ ls-R
 *.fls
 *.log
 *.synctex.gz
+
+example.pdf
