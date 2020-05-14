@@ -54,7 +54,7 @@
 
 \lstnewenvironment{atl}{
 	\lstset{
-		language=atl,
+		language=ATL,
 		frame=tb,
 		tabsize=3,
 		basicstyle=\footnotesize,
@@ -77,39 +77,49 @@
 	literate={->}{$\to$}{2} {--}{-$\,$-}{2} {<=}{$\le$}{2} {>=}{$\ge$}{2} {<>}{$<\,>$}{3}
 }
 
-\lstdefinelanguage{atl}{
-	morekeywords={rule,module,from,to,create,uses,using,embedded,refining,debug},
+\lstdefinelanguage{ATL}{
+	morekeywords={rule,module,from,to,create,uses,using,embedded,refining,debug,context},
 	morekeywords={context,def,let,in,if,then,else,endif},
 	morekeywords={lazy,unique,helper,extends},
 	morekeywords={union,intersection},
 	morekeywords={select,collect,forAll},
-	morekeywords={and,or},
-	morekeywords={do},
-	emph={Boolean,Integer,String,Sequence,thisModule},
+	morekeywords={and,or,not,xor,implies,},
+	morekeywords={foreach,in,do,for},
+	morekeywords={Bag,Set,OrderedSet,Sequence,Tuple,Integer,Real,Boolean,String,TupleType,thisModule},
+    morekeywords={true,false,
+    derived,mapsTo,distinct,
+    library,query,div,entrypoint},
 	sensitive=true,
 	morecomment=[l]{--},
 	morestring=[b]',
 	showstringspaces=false,
-	literate={->}{$\to$}{2} {<-}{$\leftarrow$}{2}
+	literate={->}{$\to$}{2} {<-}{$\leftarrow$}{2} {<=}{$\le$}{2} {>=}{$\ge$}{2} {<>}{$<\,>$}{3}
 }
+
+
 
 \lstdefinelanguage{gremlin}{
 morekeywords={as,def,fill,filter,groupCount,has,idx,inE,inV,is,label,length,match,outE,outV,v,values},
 sensitive=true
 }
 
-\lstdefinelanguage{xtext}{
+\lstdefinelanguage{Xtext}{
 	morekeywords={grammar,rule,generate,terminal},
 	morekeywords={context,def,let,in,if,then,else,endif},
 	morekeywords={lazy,unique,helper,extends},
 	morekeywords={and,or},
 	morekeywords={do},
-	emph={Boolean,Integer,String,Sequence},
+	morekeywords={with, hidden, as, import, returns, terminal, enum},
+	morekeywords=[3]{name},
 	sensitive=true,
-	morecomment=[l]{--},
+	morecomment=[l]{//}, 
+	morecomment=[s]{/*}{*/},
 	morestring=[b]',
+	morestring=[b]",
+	moredelim=**[is][\color{gray}]{`}{`},
 	showstringspaces=false,
 }
+
 
 
 \lstdefinelanguage{TypeScript}{
