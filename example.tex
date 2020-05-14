@@ -39,7 +39,7 @@ context Person
 pre: 
 	age > 0 and 
 	not firstName.oclIsUndefined() and
-	children->forAll(each | each.isValid()|)
+	children->forAll(each | each.isValid())
 \end{ocl}
 
 
@@ -52,7 +52,8 @@ rule relationnalContextToObjectContext {
 		r : RDBMSMM!RDBMSModel
 	to
 		c : ClassMM!ClassModel (
-            classifier <- r.table->union(r.getAllDataTypes()->collect(dt | thisModule.typeToPrimitiveDataType(dt)))
+			classifier <- r.table->union(r.getAllDataTypes()
+				->collect(dt | thisModule.typeToPrimitiveDataType(dt)))
 		)
 	do {
 		r.debug('relationnalContextToObjectContext');
