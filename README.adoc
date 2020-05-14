@@ -18,7 +18,9 @@ texhash science.sty
 The following LaTeX code:
 [source,latex]
 ----
-The work of Sigmund~\etal{}, \eg{} ``Man and Father'' teach us the The Legend of a Conqueror, \ie{}, the Oedipus legend.
+The work of Sigmund~\etal, \eg, ``Man and Father'' teach us the The Legend of a Conqueror, \ie, the ``Oedipus legend''.
+In speaking of Oedipus ``legend'', I am following William Bascom,
+who distinguishes between myth, legend, and folktale \wrt characters. (divine vs. human), time, setting,  \etc
 ----
 
 Will produce:

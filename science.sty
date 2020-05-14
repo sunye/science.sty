@@ -3,17 +3,22 @@
 \RequirePackage[binary-units=true]{siunitx}
 \RequirePackage{listings}
 \RequirePackage{comment}
+\RequirePackage{xspace}
 
 
 % Useful commands
 
-\newcommand{\etal}{et al.}
-\newcommand{\eg}[0]{e.\,g.}
-\newcommand{\ie}[0]{i.\,e.}
+\newcommand{\etal}{et al.\@\xspace}
+\newcommand{\eg}[0]{e.\,g.\@\xspace}
+\newcommand{\ie}[0]{i.\,e.\@\xspace}
+\newcommand{\etc}[0]{etc.\@\xspace}
+\newcommand{\wrt}{w.\,r\,.t\@\xspace}
+
 \newcommand{\set}[1]{\ensuremath{\left \{ #1 \right \}}}
 \newcommand{\tuple}[1]{\ensuremath{\left \langle #1 \right \rangle }}
 \newcommand{\code}[1]{\lstinline{#1}}
 \newcommand{\uml}[1]{\texttt{\textbf{#1}}}
+
 
 
 % Listings.sty grammars
@@ -144,4 +149,28 @@ sensitive=true
   morestring=[b]"
 }
 
+\lstdefinelanguage{QVT}{
+	morekeywords={checkonly, domain, enforce, extends, implementedby, import, key, overrides, primitive, query, relation, top},
+	morekeywords={transformation, when, where, Bag, Collection, Dict, OrderedSet, Sequence, Set, Tuple, abstract, access}, 
+	morekeywords={and, any, assert, blackbox, break, case, class, collect, collectNested, collectOne, collectselect, collectselectOne}, 
+	morekeywords={composes, compute, configuration, constructor, continue, datatype, default, derived, disjuncts, do, elif}, 
+	morekeywords={else, end, endif, enum, except, exists, extends, exception, false, forAll, forEach , forOne, from, helper}, 
+	morekeywords={if, implies, import , in, inherits, init, inout, intermediate, invresolve, invresolveIn, invresolveone},
+	morekeywords={invresolveoneIn , isUnique, iterate, late, let, library, literal, log, main, map, mapping, merges, metamodel}, 
+	morekeywords={modeltype, new, not, null, object, one, or, ordered, out, package, population, primitive, property}, 
+	morekeywords={query, raise, readonly, references, refines, reject, resolve, resolveIn, resolveone, resolveoneIn, return}, 
+	morekeywords={select, selectOne, sortedBy, static, switch, tag, then, transformation, true, try, typedef, unlimited}, 
+	morekeywords={uses, var, when, where, while, with, xcollect , xmap, xor, xselect},
+	morecomment=[l]{--},
+	morestring=[b]{'}
+}
+
+\lstdefinelanguage{ETL}{
+	morekeywords={true, false, pre, rule, operation, var, transform, to, select, selectOne, all, @greedy, for, if, else},
+	morekeywords={not, and, or, Any, String, Boolean, true, false, return},
+	morecomment=[l]{//}, 
+	morecomment=[s]{/*}{*/}, 
+	morestring=[b]"
+ }
+ 
 \endinput
