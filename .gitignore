@@ -1,2 +1,10 @@
 ls-R
 .DS_Store
+
+*.out
+*.aux
+*.lb
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz

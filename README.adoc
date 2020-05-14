@@ -15,14 +15,22 @@ texhash science.sty
 
 == Abbreviations
 
+The following LaTeX code:
 [source,latex]
 ----
 The work of Sigmund~\etal{}, \eg{} ``Man and Father'' teach us the The Legend of a Conqueror, \ie{}, the Oedipus legend.
 ----
 
+Will produce:
+
+image::./img/abbreviation.png[]
+
 == Listings package environments
 
-.OCL
+=== OCL
+
+The following LaTeX code:
+
 [source,latex]
 ----
 \begin{ocl}
@@ -34,7 +42,14 @@ pre:
 \end{ocl}
 ----
 
-.ATL
+Will produce:
+
+image::./img/ocl.png[]
+
+=== ATL
+
+The following LaTeX code:
+
 [source,latex]
 ----
 \begin{atl}
@@ -51,3 +66,7 @@ rule relationnalContextToObjectContext {
 }
 \end{atl}
 ----
+
+Will produce:
+
+image::./img/atl.png[]
