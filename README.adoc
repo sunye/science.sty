@@ -11,3 +11,43 @@ cd ~/Library/texmf/tex/latex/local
 git clone git@gitlab.univ-nantes.fr:sunye-g/science.sty.git
 texhash science.sty
 ----
+
+
+== Abbreviations
+
+[source,latex]
+----
+The work of Sigmund~\etal{}, \eg{} ``Man and Father'' teach us the The Legend of a Conqueror, \ie{}, the Oedipus legend.
+----
+
+== Listings package environments
+
+.OCL
+[source,latex]
+----
+\begin{ocl}
+context Person
+pre: 
+	age > 0 and 
+	not firstName.oclIsUndefined() and
+	children->forAll(each | each.isValid()|)
+\end{ocl}
+----
+
+.ATL
+[source,latex]
+----
+\begin{atl}
+rule relationnalContextToObjectContext {
+	from
+		r : RDBMSMM!RDBMSModel
+	to
+		c : ClassMM!ClassModel (
+            classifier <- r.table->union(r.getAllDataTypes()->collect(dt | thisModule.typeToPrimitiveDataType(dt)))
+		)
+	do {
+		r.debug('relationnalContextToObjectContext');
+	}
+}
+\end{atl}
+----
