@@ -1,0 +1,13 @@
+= science.sty
+
+A simple LaTeX style package for writing scientific papers.
+
+== Installation
+
+[source,shell]
+----
+mkdir -p ~/Library/texmf/tex/latex/local
+cd ~/Library/texmf/tex/latex/local
+git clone git@gitlab.univ-nantes.fr:sunye-g/science.sty.git
+texhash science.sty
+----
