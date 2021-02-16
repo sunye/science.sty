@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{science}[2014/03/31 v1.0 science macros]
+\ProvidesPackage{science}[2021/02/16 v1.1 science macros]
 \RequirePackage[binary-units=true]{siunitx}
 \RequirePackage{listings}
 \RequirePackage{comment}
@@ -60,6 +60,22 @@
 \lstnewenvironment{atl}{
 	\lstset{
 		language=ATL,
+		frame=tb,
+		tabsize=3,
+		basicstyle=\footnotesize,
+		keywordstyle=\bfseries,
+		ndkeywordstyle=\bfseries,
+		commentstyle=\itshape,
+		stringstyle=\ttfamily,
+		showspaces=false,
+		flexiblecolumns,
+		sensitive, extendedchars, texcl
+	}
+}{}
+
+\lstnewenvironment{tdl}{
+	\lstset{
+		language=TDL,
 		frame=tb,
 		tabsize=3,
 		basicstyle=\footnotesize,
@@ -172,5 +188,19 @@ sensitive=true
 	morecomment=[s]{/*}{*/}, 
 	morestring=[b]"
  }
+ 
+\lstdefinelanguage{TDL}{
+	keywords={all, charstring, integer, encode},
+	morekeywords={Package, Import, from, Tester, SUT},
+	morekeywords={accepts, sends, having, extends, uses},
+	morekeywords={create, connect},
+	morekeywords={Component, Gate, Type, Annotation},
+	morekeywords={template, type, record, with, configuration},
+	morekeywords={Data, Set, instance},
+	morekeywords={Use, as, Map, to, in},
+	morekeywords={Test, Configuration, Description, gate, instantiaye, fate, of, type, instantiate, gate, type},
+	morestring=[b]{"},
+	morestring=[b]{'}
+}
  
 \endinput
